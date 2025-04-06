@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permintaan Maaf untuk Nia</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            transition: background-color 0.5s;
+        }
+        h1 {
+            color: #ff69b4; /* Warna pink */
+            animation: fadeIn 2s;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .heart {
+            font-size: 50px;
+            color: #ff1493; /* Warna pink lebih gelap */
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+            margin: 5px; /* Menambahkan margin antar tombol */
+        }
+        button:hover {
+            background-color: #ff1493; /* Warna pink lebih gelap */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Maafkan Aku, Nia!</h1>
+        <p>Setiap detik tanpamu terasa hampa. Aku sangat menyesal atas kesalahanku.</p>
+        <p class="heart">❤️</p>
+        <p>Semoga kita bisa memperbaiki semuanya dan kembali bersama.</p>
+        <button id="forgiveButton" onclick="handleResponse()">Maafin</button>
+        <button id="notForgiveButton" onclick="moveButton()">Enggak Maafin</button>
+    </div>
+
+    <script>
+        function handleResponse() {
+            window.location.href = "maafin.html";
+        }
+
+        function moveButton() {
+            const button = document.getElementById('notForgiveButton');
+            const randomX = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - button.offsetHeight));
+            button.style.position = 'absolute'; // Mengubah posisi tombol menjadi absolute
+            button.style.left = randomX + 'px'; // Memindahkan tombol ke posisi X acak
+            button.style.top = randomY + 'px'; // Memindahkan tombol ke posisi Y acak
+        }
+    </script>
+</body>
+</html>
